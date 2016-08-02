@@ -1,30 +1,10 @@
-var Grub = function(age, color, food) {
-	this.age = age || 0;
-	this.color = color || 'pink';
-	this.food = food; || 'jelly';
-
-};
-
-Grub.prototype.eat = function() {
-	// do something
-};
-
-var Bee = function (age, color, job) {
-	Grub.call(this, age || 5, color || 'yellow', food);
-	this.job = job || 'keep on growing';
-
-};
-
-Bee.prototype = Object.create(Grub.prototype);
-Bee.prototype.constructor = Grub;
-
 var HoneyMakerBee = function(age, color, job) {
 	Bee.call(this, age || 10, undefined, 'make honey');
 	this.honeyPot = 0;
 };
 
 HoneyMakerBee.prototype = Object.create(Bee.prototype);
-HoneyMakerBee.prototype.constructor = Bee;
+HoneyMakerBee.prototype.constructor = HoneyMakerBee;
 
 HoneyMakerBee.prototype.makeHoney = function() {
 	this.honeyPot++;
